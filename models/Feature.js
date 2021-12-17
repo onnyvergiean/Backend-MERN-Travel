@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-
+const { ObjectId } = Schema;
 const featureSchema = new Schema({
   name: {
     type: String,
@@ -13,6 +13,10 @@ const featureSchema = new Schema({
   imageUrl: {
     type: String,
     required: true,
+  },
+  itemId: {
+    type: ObjectId,
+    ref: Item,
   },
 });
 

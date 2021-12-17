@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-
+const { objectId } = Schema;
 const activitySchema = new Schema({
   name: {
     type: String,
@@ -16,6 +16,10 @@ const activitySchema = new Schema({
   },
   isPopular: {
     type: Boolean,
+  },
+  itemId: {
+    type: ObjectId,
+    ref: Item,
   },
 });
 

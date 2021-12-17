@@ -57,3 +57,4 @@ function checkFileType(file, cb) {
 }
 
 module.exports = { uploadMultiple, upload };
+    
