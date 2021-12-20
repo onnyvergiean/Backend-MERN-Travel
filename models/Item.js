@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
-const { ObjectId } = Schema;
-const itemSchema = new Schema({
+const { ObjectId } = mongoose.Schema;
+
+const itemSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -26,9 +26,17 @@ const itemSchema = new Schema({
     type: String,
     required: true,
   },
+  unit: {
+    type: String,
+    default: "night",
+  },
+  sumBooking: {
+    type: Number,
+    default: 0,
+  },
   categoryId: {
     type: ObjectId,
-    required: true,
+    ref: "Category",
   },
   imageId: [
     {
@@ -45,7 +53,7 @@ const itemSchema = new Schema({
   activityId: [
     {
       type: ObjectId,
-      ref: "Feature",
+      ref: "Activity",
     },
   ],
 });

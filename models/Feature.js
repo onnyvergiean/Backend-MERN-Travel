@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
-const { ObjectId } = Schema;
-const featureSchema = new Schema({
+const { ObjectId } = mongoose.Schema;
+
+const featureSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -16,7 +16,7 @@ const featureSchema = new Schema({
   },
   itemId: {
     type: ObjectId,
-    ref: Item,
+    ref: "Item",
   },
 });
 

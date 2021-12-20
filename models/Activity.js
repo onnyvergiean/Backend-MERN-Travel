@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose;
-const { objectId } = Schema;
-const activitySchema = new Schema({
+const { ObjectId } = mongoose.Schema;
+
+const activitySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  qty: {
-    type: Number,
+  type: {
+    type: String,
     required: true,
   },
   imageUrl: {
@@ -19,7 +19,7 @@ const activitySchema = new Schema({
   },
   itemId: {
     type: ObjectId,
-    ref: Item,
+    ref: "Item",
   },
 });
 
