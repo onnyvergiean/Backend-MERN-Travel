@@ -421,7 +421,7 @@ module.exports = {
       const feature = await Feature.findOne({ _id: id });
       const item = await Item.findOne({ _id: itemId }).populate("featureId");
       for (let i = 0; i < item.featureId.length; i++) {
-        if (item.featureId[i]._id.toString() === feature._id) {
+        if (item.featureId[i]._id.toString() === feature._id.toString()) {
           item.featureId.pull({ _id: feature._id });
           await item.save();
         }
