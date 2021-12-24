@@ -5,7 +5,12 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/db_mern");
+mongoose.connect("mongodb://localhost:27017/db_staycation", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
