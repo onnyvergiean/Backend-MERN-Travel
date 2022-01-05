@@ -61,7 +61,7 @@ const bookingSchema = new Schema({
     },
     status: {
       type: String,
-      required: true,
+      default: "Proses",
     },
   },
 });
