@@ -112,6 +112,7 @@ module.exports = {
       accountHolder,
       bankFrom,
     } = req.body;
+
     if (!req.file) {
       return res.status(404).json({ message: "Image Not Found" });
     }
@@ -131,7 +132,7 @@ module.exports = {
     ) {
       res.status(404).json({ message: "Lengkapi Semua Field" });
     }
-    const item = await Item.findOne({ _id: id });
+    const item = await Item.findOne({ _id: idItem });
 
     if (!item) {
       return res.status(404).json({ message: "Item not found" });
