@@ -5,12 +5,15 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/db_staycation", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  "mongodb://admin:admin@cluster0-shard-00-00.10hr3.mongodb.net:27017,cluster0-shard-00-01.10hr3.mongodb.net:27017,cluster0-shard-00-02.10hr3.mongodb.net:27017/db_Staycation?ssl=true&replicaSet=atlas-k7lax2-shard-0&authSource=admin&retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
